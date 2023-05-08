@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6" >
+        <div>
+            <img src = "{{ product.thumbnail.url }}"  width="450px" height="450px">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="text-warning" style="margin: 10px;  font-weight: bold;font-size: 25px;">
+            {{ product.name }}
+         </div>
+         <div class="text-danger"  style="font-weight: bold;font-size: 25px;margin: 10px;">
+           prix : {{ product.price }} $
+         </div>
+         <div style="margin: 10px;">
+            {{ product.description }}
+            <hr>
+         </div>
+
+            <form method="POST"action="{%  url 'voir-panier' product.slug %}">
+              {% csrf_token %}
+            <div class="d-flex">
+
+             <div class="p-2">
+                 <button type="submit" class="btn btn-success">Ajouter dans le panier</button>
+             </div>
+             <div class="p-2">
+               <div class="input-group">
+                   <span color="red;font-weight: bold;">QTE :</span> <input type="number" name="QTE" class="form-control input-number" value="0" style="width: 70px;" step="1">
+               </div>
+             </div>
+            </div>
+
+          </form>
+         </div>
+</div>
+
+
+
+{% endblock %}

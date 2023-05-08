@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" type="text/css" href="media\product\static\style.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>le boutique de Gouadria</title>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+        <div class="row" style="padding-left: 5px; padding-right: 5px;">
+           <div class="col-md-12">
+               <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                 <a class="navbar-brand" href="{% url 'index' %}" >
+                     {% load static %}
+                       <img src="{% static 'media/ax.jpg' %}"  width="35" height="30" />
+                     Gouadria-shop
+                 </a>
+                 <div class="collapse navbar-collapse" id="navbarNav">
+                     <div class="col-md-8">
+                      <form method="POST">
+                      {% csrf_token %}
+                        <div class="card-body row no-gutters align-items-center">
+                          <div class="col">
+                            <input type="search" placeholder=" entrez le nom de produit que vous cherchez " name="item-name"  class="form-control form-control-borderless" >
+                          </div>
+                          <div class="col-auto">
+                           <button class="btn btn-danger" type="submit">Search</button>
+                          </div>
+                        </div>
+                      </form>
+                     </div>
+                     <div>
+                         {% if  user.is_authenticated %}
+                         {% if user.cart %}
+                         {% load static %}
+                        <img type ="button" id="panier" data-offset="0" data-toggle="modal" data-target="#myModal" src="{% static 'media/att.png' %}"  width="45" height="40" /><a href="{% url 'carter' %}">{{ user.cart.orders.count }}</a>
+                        {% endif %}
+                        {% endif %}
+                     </div>
+
+                 </div>
+                         <div>
+                            <div class="col" style="color: white;font-weight: bold;">
+                             {% if  user.is_authenticated %}
+                              Bienvenue {{ user.username }}!
+                            </div>
+                            <div class="col-md-3" style="color: white;">
+                              <a href="{% url 'logout' %}" style="color: white; font-weight: bold;"> logout</a>
+                            </div>
+                            <div >
+                              {% else %}
+                               <a href="{% url 'login' %}" style="color: white; font-weight: bold;">Connecter</a>
+                            </div>
+                            <div class="col-md-3">
+                              <a href="{% url 'signup' %}" style="color: white;font-weight: bold;">S'inscrire</a>
+                            </div>
+                             {% endif %}
+                     </div>
+
+              </nav>
+           </div>
+</div>
+
+
+
+       {% block content %}
+
+       {% endblock %}
+
+
+
+</body>
+
+</html>

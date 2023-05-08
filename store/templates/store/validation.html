@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+   {% if user.cart %}
+   <div class="col-md-12">
+      <h3 class="text-dark bg-warning">salut Mr/Mrs {{ user }}</h3>
+      <h4>Merci de nous faire confiance Mr/Mrs {{ user }} Nous avons reçu votre commande vous seriez liivrez dans un delai de 3 jour</h4>
+   {% endif %}
+
+   </div>
+</div>
+
+{% endblock %}
+

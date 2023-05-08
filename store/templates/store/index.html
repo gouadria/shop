@@ -1,0 +1,393 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if messages %}
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Commande non valider!</h4>
+    <p>
+      <h3 class="text-dark bg-warning">salut Mr/Mrs {{ user }}</h3>
+       <ul class="messages">
+            {% for message in messages %}
+              <li {% if message.tags %} class="{{ message.tags }}{% if message.extra_tags %} {{ message.extra_tags }}{% endif %}"{% endif %}>
+               <p> <strong>{{ message|safe }}</strong></p>
+              </li>
+            {% endfor %}
+       </ul>
+    </p>
+  <hr>
+ {% endif %}
+  </div>
+
+  <div class="d-flex" style="padding-left: 60px; padding-right: 60px;margin: 5px;">
+    <div class="p-2">
+      <div class="dropdown">
+           <button class="nav-link dropdown-toggle"  id="deroulanta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style=" font-weight: bold; width: 220px height:70px; cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#fff'">TOUS NOS RAYON</button>
+           <div class="dropdown-menu" aria-labelledby="slanderous">
+            <a class="dropdown-item" href="#" style=" cursor: pointer;" onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#fff'">INFORMATIQUE</a>
+            <button class="dropdown-item" type="button"style="cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#fff'">GAMING</button>
+            <form method="POST" action="{%  url 'category' %}">
+              {% csrf_token %}
+              <button class="dropdown-item" type="submit" name="categorie" value="smartphone" style="cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#fff'">TELEPHONE ET MONTRE CONNECTEE</button>
+            </form>
+            <button class="dropdown-item" type="button">ELECTROMENAGER</button>
+            <form method="POST" action="{%  url 'category' %}">
+              {% csrf_token %}
+              <button class="dropdown-item" type="submit" name="categorie" value="tv" style="cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#fff'">TV | PHOTO ET SON</button>
+            </form>
+              <button class="dropdown-item" type="button">RESEAU ET SECURITE</button>
+           </div>
+         </div>
+    </div>
+    <div class="p-2">
+       <button type="button" class="btn btn-outline-dark " style="width: 180px; cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#FFFFFF'">SERVICE ENTREPRISE</button>
+        <button type="button" class="btn btn-outline-dark " style="width: 160px; cursor: pointer;" onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#FFFFFF'">NOUS CONTACTER</button>
+       <button type="button" class="btn btn-outline-dark " style="width: 150px;cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#FFFFFF'">VENTE EN LIGNE</button>
+         <button type="button" class="btn btn-outline-dark " style="width: 80x; cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#FFFFFF'">SAV</button>
+    </div>
+    <div class="ml-auto p-2">
+        <button class="button btn-danger" style= "width: 150px;height:50px;">BESOIN D'AIDE ?</button>
+    </div>
+   </div>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-bottom:10px;">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" style="padding-left: 70px; padding-right: 70px;height: 400px; margin: 5px;">
+    <div class="carousel-item active">
+       {% load static %}
+      <img class="d-block w-100" src="{% static 'media/as.webp' %}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+       {% load static %}
+      <img class="d-block w-100" src="{% static 'media/ass.webp' %}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      {% load static %}
+      <img class="d-block w-100" src="{% static 'media/asss.webp' %}" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div class="d-flex" style=" margin-bottom: 5px;padding-right: 60px;padding-left: 60px;">
+    <div class="p-2">
+     {% load static %}
+      <img  src="{% static 'media/aqq.webp' %}"style="width: 600px;padding-left: 5px;">
+    </div>
+    <div class="p-2">
+      {% load static %}
+      <img  src="{% static 'media/aqqq.webp' %}"style="width: 600px;padding-right: 5px;">
+    </div>
+</div>
+<div class="row">
+ <div class="col-md-4"><hr style="border-top: 2px solid black; margin-left: 90px; padding:10px;"></div>
+ <div class="col-md-4"><h3 class="text-center">Séléction de PC Gamer</h3></div>
+ <div class="col-md-4"><hr style=" border-top: 2px solid black;margin-right: 90px; padding:10px;"></div>
+</div>
+<div class="slick-center">
+ <div class="container1"id="container1">
+  {% for product in productcs %} 
+  <a class="card1" href="{%  url 'productss' product.slug  %}">
+   <div >
+     <div class="text-warning" style=" font-weight: bold;font-size: 18px;">
+        {{ product.name }}
+     </div>
+     <img src = "{{ product.thumbnail.url }}"  width="300px" height="250px">
+     <div class="text-danger"  style="font-weight: bold;font-size: 25px;">
+       prix : {{ product.price }} $
+     </div>
+   </div> 
+  <a> 
+  {% endfor %}
+</div> 
+  <button id="g"> > </button>
+  <button  id="d"> < </button> 
+</div> 
+<div id="ma_div" data-ma-variable="{{ productcs.count }}"></div>
+<div class="row" style="padding-right: 60px;padding-left:60px; margin-top:15px;">
+  <div class="col">
+    {% load static %}
+    <img src="{% static 'media/st1.webp' %}" width="1227px">
+  </div>
+</div>      
+
+<div class="card" style="margin-right: 60px;margin-left: 60px;margin-top: 15px;">
+  <nav class="navbar navbar-light bg-success justify-content-between">
+    <span class="navbar-text" >
+      Sélection Smartphone -20% 
+    </span>
+    <form method="POST" action="{% url 'category' %}">
+      {% csrf_token %}
+      <div class="mr-sm-2"><button class="btn btn-success" type="submit" name="categorie" value="smartphone">VOIR PLUS</button></div>
+    </form>  
+  </nav> 
+  <div class="row" style=" align-items: center;display: inline-block; padding-right: 10px;padding-left: 10px;margin-left:4px;margin-right: 4px; margin-top:10px;margin-bottom:10px;">
+  {% for prod in prods %}
+  <div class="card" style="display: inline-block; border: 1px solid light;">
+      <a href="{% url 'productss' prod.slug  %}"><img src = "{{ prod.thumbnail.url }}"  width="193px" height="280px"></a>
+  </div>
+  {% endfor %} 
+</div>    
+</div>  
+<div class="d-flex flex-row"style="margin-top:10px;">
+  <div class="p-2"style="margin-left:53px;">
+     <img src="{{ productt.thumbnail.url }}"  width="280px" height="305px">
+  </div>
+  <div class="p-2">
+    <div class="row-md-6" style="margin-bottom: 5px;">
+      {% load static %}
+      <img src="{% static 'media/ft2.webp' %}" width="300px" height="150px">
+    </div>  
+    <div class="row-md-6">
+      {% load static %}
+      <img src="{% static 'media/ft3.webp' %}" width="300px" height="150px">
+    </div>
+  </div>  
+  <div class="p-2">
+    {% load static %}
+      <img src="{% static 'media/ft4.webp' %}" width="308px" height="305px">
+  </div>
+  <div class="p-2">
+    <div class="row-md-6" style="margin-bottom: 5px; padding-right: 55px;">
+      {% load static %}
+      <img src="{% static 'media/ft5.webp' %}" width="300px" height="150px">
+    </div>  
+    <div class="row-md-6"style="padding-right: 55px;">
+      {% load static %}
+      <img src="{% static 'media/ft6.webp' %}" width="300px" height="150px">
+    </div>  
+  </div>  
+</div>
+<div class="row">
+  <div class="col-md-4"><hr style="border-top: 2px solid black; margin-left: 90px; padding:10px;"></div>
+  <div class="col-md-4"><h3 class="text-center">Séléction Téléviseurs</h3></div>
+  <div class="col-md-4"><hr style=" border-top: 2px solid black;margin-right: 90px; padding:10px;"></div>
+ </div>
+ <div class="slick-center1">
+  <div class="container2"id="container2">
+   {% for product in prodss %} 
+   <a class="card2" href="{%  url 'productss' product.slug  %}">
+    <div >
+      <div class="text-warning" style=" font-weight: bold;font-size: 18px;">
+         {{ product.name }}
+      </div>
+      <img src = "{{ product.thumbnail.url }}"  width="300px" height="250px">
+      <div class="text-danger"  style="font-weight: bold;font-size: 25px;">
+        prix : {{ product.price }} $
+      </div>
+    </div> 
+   <a> 
+   {% endfor %}
+ </div> 
+   <button id="g1"> > </button>
+   <button  id="d1"> < </button> 
+ </div> 
+ <div id="ma_div1" data-ma-variable="{{ prodss.count }}"></div>
+<div class="row mt-2">
+  <div class="col-md-3 offset-md-6">
+      <ul class="pagination">
+        {% if products.has_previous %}
+          <li class="page-item">
+              <a class="page-link" href="?page={{ products.previous_page_number }}">Precedent</a>
+          </li>
+        {% endif %}
+          <li class="page-item active">
+              <a class="page-link" href="?page={{ products.number }}"> {{ products.number }} </a>
+          </li>
+        {% if products.has_next %}
+          <li class="page-item">
+              <a class="page-link" href="?page={{ products.next_page_number }}">Suivant</a>
+          </li>
+        {% endif %}
+
+
+      </ul>
+
+  </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          {% if orderss %}
+          <div class="d-flex justify-content-center">
+            <div class="p-2">{{ user.cart.orders.count }} Articles</div>
+            <div class="ml-auto p-2 badge badge-warning badge-pill"> Sous-Total : {{ Total }}</div>
+          </div> 
+          <div class="d-flex justify-content-between">
+             <a href="{% url 'voir-command' %}"> <button type="button" class="btn btn-success" style="width:435px;"> PASSER A LA CAISSE</button></a>
+          </div>   
+          {% endif %}
+        </h5> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> 
+       
+      </div>
+      <div class="modal-body"style="max-height: 350px; overflow-y: auto;">
+        {% for Order in orderss %}
+        <div class="row">
+         <div class="col-md-6">
+          <a href ={% url 'productss' Order.product.slug %}><img src = "{{ Order.product.thumbnail.url }}"  width="150px" height="150px"></a>
+         </div>
+         <div class="col-md-6">  
+           <div>
+            <div class="text-danger">{{ Order.product.name }} </div>
+           </div>
+           <div>
+             prix: {{ Order.product.price }} Drs
+           </div> 
+           <div>
+            <div class="d-flex" style="display: inline-block;">
+              <div class="p-2">Qté :</div>
+              <div class="p-2"> <input type="number" name="QTE" class="form-control input-number" value="{{ Order.quantity }}" style="width: 50px;height:25px;" step="1"></div>
+              {% load static %}
+              <a href="{% url 'delete-cart' order_id=Order.id %}"> <div class="ml-auto p-2" style="display: inline-block;"><img  src="{% static 'media/corb.png' %}" width="45" height="35"></div></a>
+            </div>
+           </div>
+          </div>
+        </div> 
+        <hr> 
+        {% endfor %}
+        {% if orderss %}
+        <div class="text-center text-primary">
+          <a href="{% url 'carter' %}"> Afficher et modifier le panier </a>
+        </div>
+        {% endif %}   
+        {% if not orderss %}
+        <h5 class="text-center text-green">vous n'avez aucun article dans votre panier</h5>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <style>
+        .alert-danger {
+        color: #72c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        padding: .75rem 1.25rem;
+        margin-bottom: 1rem;
+        border: 1px solid transparent;
+        border-radius: 25rem;
+        font-weight: bold;
+        animation: blink 1s infinite;
+        }
+        @keyframes blink {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
+         }
+
+    </style>
+<script>
+        var alertList = document.querySelectorAll('.alert')
+        alertList.forEach(function (alert) {
+          new bootstrap.Alert(alert)
+        });
+      </script>
+
+<script>
+  function slick1() {
+    document.body.onload=function() {
+        nbre=document.getElementById('ma_div').getAttribute('data-ma-variable');
+        console.log(nbre);
+        p=0;
+        container=document.getElementById("container1");
+        g=document.getElementById("g");
+        d=document.getElementById("d");
+        container.style.width=(355*nbre)+"px"; 
+        Affichermasquer();
+    }
+    g.onclick=function() {
+      if(p > - nbre+1)
+         p-- ;
+      container.style.transform="translate("+p*355+"px)";
+      container.style.transation="all 0.5s ease";
+      Affichermasquer();
+    }
+    d.onclick=function() {
+        if(p < 0)
+          p++;
+        container.style.transform="translate("+p*355+"px)";
+        container.style.transation="all 0.5s ease";
+        Affichermasquer();
+    }
+    function  Affichermasquer() {
+      if (p==nbre+1)
+         g.style.visibility="hidden";
+      else
+         g.style.visibility="visible";   
+      if (p==0)
+         d.style.visibility="hidden";
+      else
+         d.style.visibility="visible";      
+    }
+}  
+
+
+function slick2() {
+  document.body.onload=function() {
+      nbre1=document.getElementById('ma_div1').getAttribute('data-ma-variable');
+      console.log(nbre1);
+      p=0;
+      container1=document.getElementById("container2");
+      g1=document.getElementById("g1");
+      d1=document.getElementById("d1");
+      container.style.width=(355*nbre1)+"px"; 
+      Affichermasquer();
+  }
+  g1.onclick=function() {
+    if(p > - nbre1+1)
+       p-- ;
+    container1.style.transform="translate("+p*355+"px)";
+    container1.style.transation="all 0.5s ease";
+    Affichermasquer();
+  }
+  d1.onclick=function() {
+      if(p < 0)
+        p++;
+      container1.style.transform="translate("+p*355+"px)";
+      container1.style.transation="all 0.5s ease";
+      Affichermasquer();
+  }
+  function  Affichermasquer() {
+    if (p==nbre1+1)
+       g1.style.visibility="hidden";
+    else
+       g1.style.visibility="visible";   
+    if (p==0)
+       d1.style.visibility="hidden";
+    else
+       d1.style.visibility="visible";      
+  }
+}  
+slick1();          
+slick2();          
+</script>
+
+
+
+
+  
+
+{% endblock %}
