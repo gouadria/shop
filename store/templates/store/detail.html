@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row">
+  <div class="col-md-1"></div>
+  <div class=col-md-10>
+<div class="row">
     <div class="col-md-6" >
         <div>
-            <img src = "{{ product.thumbnail.url }}"  width="450px" height="450px">
+         <br> <br>  <img src = "{{ product.thumbnail.url }}"  width="350px" height="350px">
         </div>
     </div>
     <div class="col-md-6">
@@ -11,7 +14,7 @@
             {{ product.name }}
          </div>
          <div class="text-danger"  style="font-weight: bold;font-size: 25px;margin: 10px;">
-           prix : {{ product.price }} $
+           prix : {{ product.price }} Drs
          </div>
          <div style="margin: 10px;">
             {{ product.description }}
@@ -21,20 +24,101 @@
             <form method="POST"action="{%  url 'voir-panier' product.slug %}">
               {% csrf_token %}
             <div class="d-flex">
-
-             <div class="p-2">
+            {% if user %}
+             <div class="p-2" style="margin-right:40px;">
                  <button type="submit" class="btn btn-success">Ajouter dans le panier</button>
              </div>
              <div class="p-2">
                <div class="input-group">
-                   <span color="red;font-weight: bold;">QTE :</span> <input type="number" name="QTE" class="form-control input-number" value="0" style="width: 70px;" step="1">
+                   <span "color:red;font-weight: bold;">QTE :</span> <input type="number" min="1" id="qte" name="QTE" class="form-control input-number" value="1" style="width: 70px;" step="1">
                </div>
              </div>
+            {% else %} 
+            <a href="{% url 'login' %}"><p style=" color: green;">veuillez connecter pour avoir ajouter des produits dans le panier</p></a>
+            {% endif %} 
             </div>
 
           </form>
          </div>
 </div>
+</div>
+<div class="col-md-1"></div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          {% if orderss %}
+          <div class="d-flex justify-content-center" style="margin-bottom:5px;">
+            <div class="p-2">{{ user.cart.orders.count }} Articles</div>
+            <div class="ml-auto p-2 badge badge-warning badge-primary" style="margin-right:15px;"> Sous-Total : {{ Total }}</div>
+          </div> 
+          <div class="d-flex justify-content-center" style="margin-left:20px;">
+             <a href="{% url 'voir-command' %}"> <button type="button" class="btn btn-success" style="width:415px;"> PASSER A LA CAISSE</button></a>
+          </div>   
+          {% endif %}
+        </h5> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> 
+       
+      </div>
+      <div class="modal-body">
+        {% for Order in orderss %}
+        <div class="row">
+         <div class="col-md-6">
+          <a href ={% url 'productss' Order.product.slug %}><img src = "{{ Order.product.thumbnail.url }}"  width="150px" height="150px"></a>
+         </div>
+         <div class="col-md-6">  
+           <div>
+            <div class="text-danger">{{ Order.product.name }} </div>
+           </div>
+           <div>
+             prix: {{ Order.product.price }} Drs
+           </div> 
+           <div>
+            <div class="d-flex" style="display: inline-block;">
+              <div class="p-2">Qté :</div>
+              <div class="p-2"> <input type="number" name="QTE" class="form-control input-number" readonly value="{{ Order.quantity }}" style="width: 50px;height:25px;" step="1"></div>
+              {% load static %}
+              <a href="{% url 'delete-cart' order_id=Order.id %}"> <div class="ml-auto p-2" style="display: inline-block;"><img  src="{% static 'media/corb.png' %}" width="45" height="35"></div></a>
+            </div>
+           </div>
+          </div>
+        </div> 
+        <hr> 
+        {% endfor %}
+        {% if orderss %}
+        <div class="text-center text-primary">
+          <a href="{% url 'carter' %}"> Afficher et modifier le panier </a>
+        </div>
+        {% endif %}   
+        {% if not orderss %}
+        <h5 class="text-center text-green">vous n'avez aucun article dans votre panier</h5>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+   numberInput = document.getElementById('qte');
+
+  numberInput.addEventListener('input', function() {
+     value = parseFloat(numberInput.value);
+    
+    if (value < 0) {
+      numberInput.setCustomValidity('Veuillez entrer un nombre positif.');
+    } else {
+      numberInput.setCustomValidity('');
+    }
+  });
+</script>
+
 
 
 

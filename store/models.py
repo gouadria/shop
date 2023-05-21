@@ -37,7 +37,11 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse("product", kwargs={"slug": self.slug})
+    
 
+class Publicite(models.Model):
+    produit = models.ForeignKey(Product, on_delete=models.CASCADE)    
+    thumbnail = models.ImageField(upload_to="product", blank=True, null=True)
 
 class order(models.Model):
 
@@ -74,6 +78,11 @@ class cart(models.Model):
 class command(models.Model):
     user = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
     Cart = models.ForeignKey(cart, on_delete=models.CASCADE)
+    email = models.EmailField()
+    Address = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    pays = models.CharField(max_length=100)
+    zip = models.CharField(max_length=100)
     Total_command = models.IntegerField(default=0)
     Nbre_Article = models.IntegerField(default=0)
     date_command = models.DateTimeField(blank=True, null=True)

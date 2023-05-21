@@ -1,4 +1,7 @@
-.slick-center {
+body {
+    overflow-x: hidden;
+}
+#s1 {
     width: 1230px;
     height: 400px;
     margin-right: 60px;
@@ -9,7 +12,7 @@
     display: flex;
     overflow: hidden;
 }
-.container1 {
+#container1 {
     width: 1235px;
     height: 400px;
     border: solid 4px #ffffff71;
@@ -57,18 +60,19 @@
     top:auto;
 
 }
-#g:hover {
+button#g:hover {
     transform:rotate(180deg) scale(1.1) ;
     opacity: 1;
     transition: 0.3s ease;
 
 }
-#d:hover {
+button#d:hover {
     transform:rotate(180deg) scale(1.1) ;
     opacity: 1;
     transition: 0.3s ease;
 }
-.slick-center1 {
+
+#s2 {
     width: 1230px !important;
     height: 400px !important;
     margin-right: 60px !important;
@@ -79,7 +83,7 @@
     display: flex !important;
     overflow: hidden !important;
 }
-.container2 {
+#container2 {
     width: 1235px !important;
     height: 400px !important;
     border: solid 4px #ffffff71 !important;
@@ -127,13 +131,13 @@
     top:auto !important;
 
 }
-#g1:hover {
+button#g1:hover {
     transform:rotate(180deg) scale(1.1) !important;
     opacity: 1 !important;
     transition: 0.3s ease !important;
 
 }
-#d1:hover {
+button#d1:hover {
     transform:rotate(180deg) scale(1.1) !important;
     opacity: 1 !important;
     transition: 0.3s ease !important;
@@ -141,4 +145,68 @@
 #panier{
     cursor: pointer !important;
     
+}
+#maliste {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  border: 2px solid #913131;
+  padding: 5px;
+  z-index: 1;
+  width: 100%;
+  height: 80%;
+  display: none;
+}
+#deroulanta {
+    font-weight: bold !important;
+    width: 220px !important;
+    height: 60px !important;
+    cursor: pointer !important;
+
+}
+#bouton1 {
+    width: 180px;
+    height: 50px;
+
+}
+button#bouton1:hover + #maliste,
+#maliste:hover { 
+    display: block !important;
+}
+#bouton3 {
+    cursor: pointer;
+    width: 180px;
+    height: 50px;
+
+}
+#bouton4 {
+    cursor: pointer;
+    width: 180px;
+    height: 50px;
+
+}
+#bouton5 {
+    cursor: pointer;
+    width: 90px;
+    height: 50px;
+
+}
+
+.modal-body {
+    height: 350px;
+    overflow-y: auto;
+}
+.card3 {
+    display: inline-block;
+    height: 150px;
+    width: 18rem;
+    border: solid 2px #3930e471;
+    margin-left:70px;
+    margin-right:70px; 
+    background-color: #ffffff88;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }

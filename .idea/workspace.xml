@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a04dc60f-c132-4f1c-a8e3-7acec7cd8b67" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Docshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Docshop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4dd0628dad881f3e26af8980af25201c6bbe79c2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/857aba1eb28d6f979457c85038eaf203d1250cac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b46a0d4194102910bdfd911126b7a84cfe38127e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/4/c49fb99834d0984c98fea106ef6b566f242e2b3f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/8/c842493f8c3c6ac29ef61cab9fc46d3af02e60bc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da7c237b85a69c00a9ab8c189bf63e22070fcac3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/d/4dd0628dad881f3e26af8980af25201c6bbe79c2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/5/857aba1eb28d6f979457c85038eaf203d1250cac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/4/b46a0d4194102910bdfd911126b7a84cfe38127e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/4/c49fb99834d0984c98fea106ef6b566f242e2b3f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/8/c842493f8c3c6ac29ef61cab9fc46d3af02e60bc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/a/da7c237b85a69c00a9ab8c189bf63e22070fcac3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/account/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/product/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/media/product/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/afff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/an.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/ann.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/annn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/aqq.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/aqqq.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/as.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/ass.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/asss.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/at.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/att.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/ax.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/axx.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/axxx.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/corb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/exemples-panier-ecommerce-740x368.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/ft1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/ft2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/ft3.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/ft4.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/ft5.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/ft6.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/st1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/téléchargement.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/messages.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/messages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/store/voir-command.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/store/voir-command.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2Q2dzH6l3OcStQiFxFxVIxD0jc5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a04dc60f-c132-4f1c-a8e3-7acec7cd8b67" name="Changes" comment="" />
+      <created>1684556006099</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684556006099</updated>
+      <workItem from="1684556021867" duration="31000" />
+    </task>
+    <servers />
+  </component>
+</project>

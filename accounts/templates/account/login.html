@@ -1,6 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 
+{% if messages %}
+      <div class="alert alert-light" role="alert">
+        <h4 class="alert-heading">user name ou password invalid !</h4>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+         </button>  
+          <p>
+             <ul class="messages">
+                  {% for message in messages %}
+                   
+                    <li {% if message.tags %} class="{{ message.tags }}{% if message.extra_tags %} {{ message.extra_tags }}{% endif %}"{% endif %}>
+                     <p> <strong>{{ message|safe }}</strong></p> 
+                    </li>
+                 
+                  {% endfor %}
+             </ul>
+          </p>
+      </div>  
+{% endif %}
+    
+
+
 <section class="vh-100" style="background-color: #eee;">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -37,7 +59,11 @@
                     <button type="submit" class="btn btn-primary btn-lg">connecter</button>
                   </div>
 
+
                 </form>
+                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                  <a href="{% url 'signup' %}" style="color:green;">inscrit-vous</a>
+                </div>
 
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
@@ -53,7 +79,18 @@
     </div>
   </div>
 </section>
-                   <
+<div id="myModal1" class="modal">
+  <div class="modal-content">
+    <span class="close1">&times;</span>
+    <p>Vous êtes déjà connecté. Veuillez vous déconnecter avant d'accéder à la page de connexion.</p>
+  </div>
+</div>
+<script>
+  history.pushState(null, document.title, location.href);
+  window.addEventListener('popstate', function (event) {
+      history.pushState(null, document.title, location.href);
+  });
+</script>
 
 
 

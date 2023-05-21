@@ -1,5 +1,38 @@
-{% extends 'base.html' %}
 
+  {% extends 'base.html' %}
+  
+  {% block styles %}
+  {{ block.super }}
+    <style>
+      #slidingWindow {
+        position: fixed;
+        top: 50%;
+        left: 1040px;
+        transform: translateY(-50%);
+        width: 300px;
+        height: 280px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        transition: left 0.3s;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      #slidingWindow p {
+        margin-left: 10px; /* Ajuster la valeur selon l'espacement souhaité */
+      }
+      #slidingWindow p.sous-total {
+        padding-right: 50px; /* Espacement spécifique pour le Sous-Total */
+      }
+      #slidingWindow p.Timbre fiscale {
+        padding-right: 50px; /* Espacement spécifique pour le Sous-Total */
+      }
+      #slidingWindow p.{{ Total }} {
+        font-size: 24px; 
+        color: red; 
+      }  
+    </style>
+      {% endblock %}
 
 {% block content %}
 <div class="row">
@@ -37,9 +70,25 @@
     </table>     
   </div>
   <div class="col-md-3">
-    <p style="font-size:20px;"><br><br>Sommaire</P><hr>
-     <p>Sous-Total:         {{Total }}<br>Timbre fiscale :          1.000<br>TVA:  0.000<br>TOTAL-COMMANDE:  <br><br><button class="btn btn-success" style="width:170px;">Passer A LA CAISSE</button></P>
+    <div id="slidingWindow">
+       <p style="font-size:20px;"><br>Sommaire<hr>
+       <p>Sous-Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ Total }}<br>Timbre fiscale : &nbsp;&nbsp;&nbsp;&nbsp; 1.000<br>TVA:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 0.000<br>TOTAL-COMMANDE:  <br><br><a href="{% url 'voir-command' %}"><button class="btn btn-success" style="width:220px;">PASSER A LA CAISSE</button></a></P>
+    </div> 
   </div>
 </div>    
+<script>
+  window.addEventListener('scroll', function() {
+    var slidingWindow = document.getElementById('slidingWindow');
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var windowHeight = window.innerHeight;
+    var slidingWindowHeight = slidingWindow.offsetHeight;
+  
+    if (scrollTop > windowHeight - slidingWindowHeight) {
+      slidingWindow.style.top = (windowHeight - slidingWindowHeight) + 'px';
+    } else {
+      slidingWindow.style.top = '50%';
+    }
+  });
+</script>
 
 {% endblock %}

@@ -21,10 +21,10 @@
   <div class="d-flex" style="padding-left: 60px; padding-right: 60px;margin: 5px;">
     <div class="p-2">
       <div class="dropdown">
-           <button class="nav-link dropdown-toggle"  id="deroulanta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style=" font-weight: bold; width: 220px height:70px; cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#fff'">TOUS NOS RAYON</button>
+           <button class="nav-link dropdown-toggle"  id="deroulanta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="  "onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#fff'">TOUS NOS RAYON</button>
            <div class="dropdown-menu" aria-labelledby="slanderous">
-            <a class="dropdown-item" href="#" style=" cursor: pointer;" onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#fff'">INFORMATIQUE</a>
-            <button class="dropdown-item" type="button"style="cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#fff'">GAMING</button>
+            <a class="dropdown-item" href="#"  onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#fff'">INFORMATIQUE</a>
+            <button class="dropdown-item" type="button" onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#fff'">GAMING</button>
             <form method="POST" action="{%  url 'category' %}">
               {% csrf_token %}
               <button class="dropdown-item" type="submit" name="categorie" value="smartphone" style="cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#fff'">TELEPHONE ET MONTRE CONNECTEE</button>
@@ -39,44 +39,83 @@
          </div>
     </div>
     <div class="p-2">
-       <button type="button" class="btn btn-outline-dark " style="width: 180px; cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#FFFFFF'">SERVICE ENTREPRISE</button>
-        <button type="button" class="btn btn-outline-dark " style="width: 160px; cursor: pointer;" onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#FFFFFF'">NOUS CONTACTER</button>
-       <button type="button" class="btn btn-outline-dark " style="width: 150px;cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#FFFFFF'">VENTE EN LIGNE</button>
-         <button type="button" class="btn btn-outline-dark " style="width: 80x; cursor: pointer;"onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#FFFFFF'">SAV</button>
+       <button class="btn btn-outline-dark " id="bouton1">SERVICE ENTREPRISE</button>
+       <div id="maliste">
+        <p>
+         <h2 style="margin-left: 100px;font-size: 25px; color: gray;"> Service Entreprise </h2>
+         <h3 style="margin-left: 120px;font-size: 25px; color: gray;"><strong>GouadriaShop</strong></h3>
+         <h4 style="margin-left: 75px; color: gray;">Votre Partenaire de Succes</h4><br>
+        </p> 
+        <div class="card3">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <h6 class="card-subtitle mb-2 text-muted"></h6>
+            <br><p class="card-text">Tél: 26 112 745</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+        <div class="card3">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <h6 class="card-subtitle mb-2 text-muted"></h6>
+            <br><p class="card-text">mail: anis2240@gouadiashop.tn</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+        <div class="card3">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <h6 class="card-subtitle mb-2 text-muted"></h6>
+            <p class="card-text">58, Rue de L'industrie Charguia I 2035 tunis</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+       </div>  
+        <button type="button" class="btn btn-outline-dark " id="bouton3"  onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#FFFFFF'">NOUS CONTACTER</button>
+       <button type="button" class="btn btn-outline-dark " id="bouton4" onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#FFFFFF'">VENTE EN LIGNE</button>
+         <button type="button" class="btn btn-outline-dark " id="bouton5" onmouseover="this.style.backgroundColor='#8B0000'" onmouseout="this.style.backgroundColor='#FFFFFF'">SAV</button>
     </div>
     <div class="ml-auto p-2">
         <button class="button btn-danger" style= "width: 150px;height:50px;">BESOIN D'AIDE ?</button>
     </div>
    </div>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-bottom:10px;">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" style="padding-left: 70px; padding-right: 70px;height: 400px; margin: 5px;">
-    <div class="carousel-item active">
-       {% load static %}
-      <img class="d-block w-100" src="{% static 'media/as.webp' %}" alt="First slide">
+   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-bottom:10px;">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" style="padding-left: 70px; padding-right: 70px;height: 400px; margin: 5px;">
+      <div class="carousel-item active"> 
+        <form method="POST" action="{%  url 'category' %}">
+          {% csrf_token %}
+        <button type="submit"  style="border: none; background: none;" name="categorie" value="tv"> 
+        {% load static %}
+        <img class="d-block w-100"  src="{%  static 'media/as.webp' %}" alt="First slide">
+        </button>
+        </form>
+      </div>
+      <div class="carousel-item">
+        {% load static %}
+        <img class="d-block w-100" src="{%  static 'media/ass.webp' %}" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        {% load static %}
+        <img class="d-block w-100" src="{%  static 'media/asss.webp' %}" alt="Third slide">
+      </div>
     </div>
-    <div class="carousel-item">
-       {% load static %}
-      <img class="d-block w-100" src="{% static 'media/ass.webp' %}" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      {% load static %}
-      <img class="d-block w-100" src="{% static 'media/asss.webp' %}" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>   
 <div class="d-flex" style=" margin-bottom: 5px;padding-right: 60px;padding-left: 60px;">
     <div class="p-2">
      {% load static %}
@@ -92,8 +131,8 @@
  <div class="col-md-4"><h3 class="text-center">Séléction de PC Gamer</h3></div>
  <div class="col-md-4"><hr style=" border-top: 2px solid black;margin-right: 90px; padding:10px;"></div>
 </div>
-<div class="slick-center">
- <div class="container1"id="container1">
+<div class="slick-center" id="s1">
+ <div class="container" id="container1">
   {% for product in productcs %} 
   <a class="card1" href="{%  url 'productss' product.slug  %}">
    <div >
@@ -105,13 +144,13 @@
        prix : {{ product.price }} $
      </div>
    </div> 
-  <a> 
+  </a> 
   {% endfor %}
 </div> 
-  <button id="g"> > </button>
-  <button  id="d"> < </button> 
+<button id="g">></button>
+<button  id="d"><</button> 
 </div> 
-<div id="ma_div" data-ma-variable="{{ productcs.count }}"></div>
+<div id="ma_div" data-ma-variable ="{{ productcs.count }}"></div>
 <div class="row" style="padding-right: 60px;padding-left:60px; margin-top:15px;">
   <div class="col">
     {% load static %}
@@ -124,19 +163,23 @@
     <span class="navbar-text" >
       Sélection Smartphone -20% 
     </span>
+    <br>
     <form method="POST" action="{% url 'category' %}">
       {% csrf_token %}
       <div class="mr-sm-2"><button class="btn btn-success" type="submit" name="categorie" value="smartphone">VOIR PLUS</button></div>
     </form>  
   </nav> 
   <div class="row" style=" align-items: center;display: inline-block; padding-right: 10px;padding-left: 10px;margin-left:4px;margin-right: 4px; margin-top:10px;margin-bottom:10px;">
-  {% for prod in prods %}
+    
+    {% for prod in prodsss|slice:":6" %}
+   
   <div class="card" style="display: inline-block; border: 1px solid light;">
       <a href="{% url 'productss' prod.slug  %}"><img src = "{{ prod.thumbnail.url }}"  width="193px" height="280px"></a>
   </div>
   {% endfor %} 
-</div>    
+    
 </div>  
+</div>
 <div class="d-flex flex-row"style="margin-top:10px;">
   <div class="p-2"style="margin-left:53px;">
      <img src="{{ productt.thumbnail.url }}"  width="280px" height="305px">
@@ -171,8 +214,8 @@
   <div class="col-md-4"><h3 class="text-center">Séléction Téléviseurs</h3></div>
   <div class="col-md-4"><hr style=" border-top: 2px solid black;margin-right: 90px; padding:10px;"></div>
  </div>
- <div class="slick-center1">
-  <div class="container2"id="container2">
+ <div class="slick-center" id="s2">
+  <div class="container" id="container2">
    {% for product in prodss %} 
    <a class="card2" href="{%  url 'productss' product.slug  %}">
     <div >
@@ -184,34 +227,13 @@
         prix : {{ product.price }} $
       </div>
     </div> 
-   <a> 
+  </a> 
    {% endfor %}
  </div> 
    <button id="g1"> > </button>
    <button  id="d1"> < </button> 
  </div> 
  <div id="ma_div1" data-ma-variable="{{ prodss.count }}"></div>
-<div class="row mt-2">
-  <div class="col-md-3 offset-md-6">
-      <ul class="pagination">
-        {% if products.has_previous %}
-          <li class="page-item">
-              <a class="page-link" href="?page={{ products.previous_page_number }}">Precedent</a>
-          </li>
-        {% endif %}
-          <li class="page-item active">
-              <a class="page-link" href="?page={{ products.number }}"> {{ products.number }} </a>
-          </li>
-        {% if products.has_next %}
-          <li class="page-item">
-              <a class="page-link" href="?page={{ products.next_page_number }}">Suivant</a>
-          </li>
-        {% endif %}
-
-
-      </ul>
-
-  </div>
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog" role="document">
@@ -219,12 +241,12 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">
           {% if orderss %}
-          <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center" style="margin-bottom:5px;">
             <div class="p-2">{{ user.cart.orders.count }} Articles</div>
-            <div class="ml-auto p-2 badge badge-warning badge-pill"> Sous-Total : {{ Total }}</div>
+            <div class="ml-auto p-2 badge badge-warning badge-primary" style="margin-right:15px;"> Sous-Total : {{ Total }}</div>
           </div> 
-          <div class="d-flex justify-content-between">
-             <a href="{% url 'voir-command' %}"> <button type="button" class="btn btn-success" style="width:435px;"> PASSER A LA CAISSE</button></a>
+          <div class="d-flex justify-content-center" style="margin-left:20px;">
+             <a href="{% url 'voir-command' %}"> <button type="button" class="btn btn-success" style="width:415px;"> PASSER A LA CAISSE</button></a>
           </div>   
           {% endif %}
         </h5> 
@@ -233,7 +255,7 @@
         </button> 
        
       </div>
-      <div class="modal-body"style="max-height: 350px; overflow-y: auto;">
+      <div class="modal-body">
         {% for Order in orderss %}
         <div class="row">
          <div class="col-md-6">
@@ -249,7 +271,7 @@
            <div>
             <div class="d-flex" style="display: inline-block;">
               <div class="p-2">Qté :</div>
-              <div class="p-2"> <input type="number" name="QTE" class="form-control input-number" value="{{ Order.quantity }}" style="width: 50px;height:25px;" step="1"></div>
+              <div class="p-2"> <input type="number" name="QTE" class="form-control input-number" readonly value="{{ Order.quantity }}" style="width: 50px;height:25px;" step="1"></div>
               {% load static %}
               <a href="{% url 'delete-cart' order_id=Order.id %}"> <div class="ml-auto p-2" style="display: inline-block;"><img  src="{% static 'media/corb.png' %}" width="45" height="35"></div></a>
             </div>
@@ -299,95 +321,108 @@
          }
 
     </style>
+    <script>
+      // Fonction pour déplacer la modal en dessous du bouton
+      function moveModal() {
+         modal = document.getElementById('myModal');
+         button = document.getElementById('panier');
+        
+        // Vérifie si la modal et le bouton existent
+        if (modal && button) {
+          button.after(modal);
+        }
+      }
+    </script>    
 <script>
-        var alertList = document.querySelectorAll('.alert')
+        alertList = document.querySelectorAll('.alert')
         alertList.forEach(function (alert) {
           new bootstrap.Alert(alert)
         });
-      </script>
-
+</script>
 <script>
-  function slick1() {
-    document.body.onload=function() {
-        nbre=document.getElementById('ma_div').getAttribute('data-ma-variable');
-        console.log(nbre);
-        p=0;
-        container=document.getElementById("container1");
-        g=document.getElementById("g");
-        d=document.getElementById("d");
-        container.style.width=(355*nbre)+"px"; 
-        Affichermasquer();
-    }
-    g.onclick=function() {
-      if(p > - nbre+1)
-         p-- ;
-      container.style.transform="translate("+p*355+"px)";
-      container.style.transation="all 0.5s ease";
-      Affichermasquer();
-    }
-    d.onclick=function() {
-        if(p < 0)
-          p++;
-        container.style.transform="translate("+p*355+"px)";
-        container.style.transation="all 0.5s ease";
-        Affichermasquer();
-    }
-    function  Affichermasquer() {
-      if (p==nbre+1)
-         g.style.visibility="hidden";
-      else
-         g.style.visibility="visible";   
-      if (p==0)
-         d.style.visibility="hidden";
-      else
-         d.style.visibility="visible";      
-    }
-}  
+  function slick() {
+    nbre1 = document.getElementById('ma_div').getAttribute('data-ma-variable');
+    p1 = 0;
+    container1 = document.getElementById("container1");
+    g1 = document.getElementById("g");
+    d1 = document.getElementById("d");
+    container1.style.width = (355 * nbre1) + "px";
+    container1.style.margin = "0"; 
+    Affichermasquer1();
 
+    g1.onclick = function() {
+      if (p1 > -nbre1 + 1)
+        p1--;
+      container1.style.transform = "translate(" + p1 * 355 + "px)";
+      container1.style.transition = "all 0.5s ease";
+      Affichermasquer1();
+    }
+    d1.onclick = function() {
+      if (p1 < 0)
+        p1++;
+      container1.style.transform = "translate(" + p1 * 355 + "px)";
+      container1.style.transition = "all 0.5s ease";
+      Affichermasquer1();
+    }
 
-function slick2() {
-  document.body.onload=function() {
-      nbre1=document.getElementById('ma_div1').getAttribute('data-ma-variable');
-      console.log(nbre1);
-      p=0;
-      container1=document.getElementById("container2");
-      g1=document.getElementById("g1");
-      d1=document.getElementById("d1");
-      container.style.width=(355*nbre1)+"px"; 
-      Affichermasquer();
+    nbre2 = document.getElementById('ma_div1').getAttribute('data-ma-variable');
+    p2 = 0;
+    container2 = document.getElementById("container2");
+    g2 = document.getElementById("g1");
+    d2 = document.getElementById("d1");
+    container2.style.width = (355 * nbre2) + "px";
+    container2.style.margin = "0"; 
+    Affichermasquer2();
+
+    g2.onclick = function() {
+      if (p2 > -nbre2 + 1)
+        p2--;
+      container2.style.transform = "translate(" + p2 * 355 + "px)";
+      container2.style.transition = "all 0.5s ease";
+      Affichermasquer2();
+    }
+
+    d2.onclick = function() {
+      if (p2 < 0)
+        p2++;
+      container2.style.transform = "translate(" + p2 * 355 + "px)";
+      container2.style.transition = "all 0.5s ease";
+      Affichermasquer2();
+    }
+
+    function Affichermasquer1() {
+      if (p1 == nbre1 + 1)
+        g1.style.visibility = "hidden";
+      else
+        g1.style.visibility = "visible";
+
+      if (p1 == 0)
+        d1.style.visibility = "hidden";
+      else
+        d1.style.visibility = "visible";
+    }
+
+    function Affichermasquer2() {
+      if (p2 == nbre2 + 1)
+        g2.style.visibility = "hidden";
+      else
+        g2.style.visibility = "visible";
+
+      if (p2 == 0)
+        d2.style.visibility = "hidden";
+      else
+        d2.style.visibility = "visible";
+    }
   }
-  g1.onclick=function() {
-    if(p > - nbre1+1)
-       p-- ;
-    container1.style.transform="translate("+p*355+"px)";
-    container1.style.transation="all 0.5s ease";
-    Affichermasquer();
-  }
-  d1.onclick=function() {
-      if(p < 0)
-        p++;
-      container1.style.transform="translate("+p*355+"px)";
-      container1.style.transation="all 0.5s ease";
-      Affichermasquer();
-  }
-  function  Affichermasquer() {
-    if (p==nbre1+1)
-       g1.style.visibility="hidden";
-    else
-       g1.style.visibility="visible";   
-    if (p==0)
-       d1.style.visibility="hidden";
-    else
-       d1.style.visibility="visible";      
-  }
-}  
-slick1();          
-slick2();          
+
+  slick();
 </script>
 
 
 
 
-  
+
+
+
 
 {% endblock %}

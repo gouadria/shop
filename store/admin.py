@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from store.models import Product, category, order, cart, command, Article
+from store.models import Product, category, order, cart, command, Article, Publicite
 
 admin.site.site_header = "shop"
 admin.site.site_title = "Gouadria-shop"
@@ -20,7 +20,7 @@ class AdminOrder(admin.ModelAdmin):
 
 
 class AdminCommand(admin.ModelAdmin):
-    list_display = ('user', 'Nbre_Article', 'Total_command', 'date_command')
+    list_display = ('user', 'Nbre_Article', 'Total_command', 'date_command', 'email', 'Address')
 
 
 class AdminArticle(admin.ModelAdmin):
@@ -33,3 +33,4 @@ admin.site.register(order, AdminOrder)
 admin.site.register(cart)
 admin.site.register(command, AdminCommand)
 admin.site.register(Article, AdminArticle)
+admin.site.register(Publicite)

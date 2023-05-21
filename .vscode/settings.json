@@ -1,0 +1,30 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "anis2",
+            "database": "gouadria_shop",
+            "username": "gouadria_gouadriaanis",
+            "connectionTimeout": 3600
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "anis3",
+            "database": "gouadria_shop",
+            "username": "gouadria@localhost",
+            "connectionTimeout": 3600
+        }
+    ]
+}
